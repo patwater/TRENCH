@@ -1,0 +1,21 @@
+========================================================================
+              Spatial Lag Model (2SLS)  — Outcome: PCI score            
+========================================================================
+  N            : 24
+  R² (2nd stg) : 0.7113
+------------------------------------------------------------------------
+  Variable                               Coef    Std Err        p
+------------------------------------------------------------------------
+  const                               63.9367    31.1865   0.0404 **
+  fragmentation_idx                   -3.0170     1.1510   0.0088 ***
+  median_hh_income_z                   5.1854     2.7512   0.0595 *
+  poverty_rate_z                      -3.1644     2.7177   0.2443 
+  rho_W_PCI                           -0.1444     0.5661   0.7986 
+------------------------------------------------------------------------
+  Moran's I (residuals): I=-0.1994  p=0.067
+  Instruments: W·X, W²·X  (each covariate)
+  Significance: *** p<0.01  ** p<0.05  * p<0.10
+
+  Interpretation of ρ (rho_W_PCI):
+    Positive ρ → road quality spills over jurisdictional borders
+    (neighbours' PCI predicts own PCI, controlling for fragmentation)

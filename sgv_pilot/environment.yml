@@ -1,0 +1,27 @@
+name: sgv_pilot
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - geopandas>=0.14
+  - pandas>=2.0
+  - pyarrow>=14.0
+  - requests>=2.31
+  - osmnx>=1.9
+  - shapely>=2.0
+  - fiona>=1.9
+  - pyproj>=3.6
+  - scipy>=1.11
+  - numpy>=1.26
+  - pip
+  - matplotlib>=3.8
+  - seaborn>=0.13
+  - scikit-learn>=1.4
+  - jupyterlab>=4.0
+  - nbconvert>=7.0
+  - pip:
+      - statsmodels>=0.14
+      - esda>=2.9
+      - libpysal>=4.14
+      - ydata-profiling>=4.6

@@ -1,0 +1,26 @@
+{
+  "pci_score": {
+    "I": -0.1114,
+    "EI": -0.0435,
+    "z_score": -0.6139,
+    "p_value": 0.5393,
+    "p_sim": 0.275,
+    "interpretation": "No significant spatial autocorrelation"
+  },
+  "cost_per_lane_mile": {
+    "I": -0.0904,
+    "EI": -0.0435,
+    "z_score": -0.4245,
+    "p_value": 0.6712,
+    "p_sim": 0.368,
+    "interpretation": "No significant spatial autocorrelation"
+  },
+  "fragmentation_idx": {
+    "I": -0.0806,
+    "EI": -0.0435,
+    "z_score": -0.3356,
+    "p_value": 0.7371,
+    "p_sim": 0.382,
+    "interpretation": "No significant spatial autocorrelation"
+  }
+}
