@@ -1,0 +1,25 @@
+name,median_hh_income,per_capita_income,poverty_rate,acs_year,source,income_quartile,median_hh_income_z
+Alhambra,61542,25100,13.4,2023,synthetic_quickfacts,Q1_low,-1.023
+Arcadia,96028,44800,7.6,2023,synthetic_quickfacts,Q4_high,1.326
+Azusa,67331,22600,13.2,2023,synthetic_quickfacts,Q2_mid_low,-0.629
+Baldwin Park,63504,17200,14.9,2023,synthetic_quickfacts,Q1_low,-0.889
+Covina,78902,30500,10.1,2023,synthetic_quickfacts,Q3_mid_high,0.159
+Diamond Bar,105831,40200,5.4,2023,synthetic_quickfacts,Q4_high,1.994
+Duarte,63750,25800,11.8,2023,synthetic_quickfacts,Q1_low,-0.873
+El Monte,55017,16900,19.3,2023,synthetic_quickfacts,Q1_low,-1.468
+Glendora,94417,38700,5.9,2023,synthetic_quickfacts,Q4_high,1.216
+Industry,85000,42000,4.0,2023,synthetic_quickfacts,Q3_mid_high,0.575
+Irwindale,72500,35000,6.5,2023,synthetic_quickfacts,Q2_mid_low,-0.277
+La Puente,64531,18400,14.6,2023,synthetic_quickfacts,Q2_mid_low,-0.819
+La Verne,100625,41500,5.1,2023,synthetic_quickfacts,Q4_high,1.639
+Monrovia,82411,34600,8.7,2023,synthetic_quickfacts,Q3_mid_high,0.398
+Montebello,64233,22300,13.1,2023,synthetic_quickfacts,Q2_mid_low,-0.84
+Monterey Park,71202,27800,10.3,2023,synthetic_quickfacts,Q2_mid_low,-0.365
+Pomona,66129,20300,16.8,2023,synthetic_quickfacts,Q2_mid_low,-0.711
+Rosemead,61875,20100,14.2,2023,synthetic_quickfacts,Q1_low,-1.0
+San Dimas,97553,40900,5.8,2023,synthetic_quickfacts,Q4_high,1.43
+San Gabriel,72614,27500,10.9,2023,synthetic_quickfacts,Q3_mid_high,-0.269
+South El Monte,59375,17800,17.3,2023,synthetic_quickfacts,Q1_low,-1.171
+Temple City,85417,33500,7.2,2023,synthetic_quickfacts,Q4_high,0.603
+West Covina,83269,29300,9.4,2023,synthetic_quickfacts,Q3_mid_high,0.457
+Whittier,84432,31900,8.6,2023,synthetic_quickfacts,Q3_mid_high,0.536

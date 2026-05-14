@@ -47,6 +47,11 @@
 | `unit_cost_hma` | Float | Price per ton for Hot Mix Asphalt |
 | `scale_class` | Category | Small/Medium/Large based on lane-mileage |
 | `last_survey` | DateTime | Date of most recent pavement assessment |
+| `median_hh_income` | Integer | ACS 5-yr median household income ($) — control variable |
+| `per_capita_income` | Integer | ACS 5-yr per capita income ($) — control variable |
+| `poverty_rate` | Float | % population below poverty line — control variable |
+| `income_quartile` | Category | Q1_low/Q2_mid_low/Q3_mid_high/Q4_high within SGV peer group |
+| `median_hh_income_z` | Float | Z-score of median HH income; use directly as regression control |
 
 ## VI. Execution Log
 - [x] Initialize GitHub Repository `socal_fragmentation_tax`.
@@ -56,6 +61,10 @@
   - Output: `data/output/san_gabriel_valley_boundary_mesh.geojson`
   - Output: `data/output/san_gabriel_valley_jurisdictions.geojson` (24 SGV jurisdictions with jurisdictional density)
   - Note: OSM network fetched via synthetic grid fallback (Overpass API not reachable in sandbox); swap `_fetch_osm_edges` for live data in production.
+- [x] Run `income_fetcher` for all 24 SGV cities (ACS 2023 5-year estimates).
+  - Output: `data/output/income_by_jurisdiction.parquet` + `.csv`
+  - Income fields merged into `san_gabriel_valley_jurisdictions.geojson`
+  - Note: Census API blocked in sandbox; static ACS QuickFacts fallback used — swap for live API in production.
 - [ ] Run `pci_aggregator` (requires network access to SaveCaliforniaStreets.org).
 - [ ] Run `procurement_scrubber` (requires network access to SCO open-data API).
 - [ ] Begin Phase 2: Stochastic Frontier Analysis and PCI regression models.
