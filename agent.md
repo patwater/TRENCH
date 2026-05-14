@@ -33,9 +33,23 @@
     - Isolate unit costs for "Asphalt Concrete" and "Slurry Seal" to identify procurement premiums in smaller jurisdictions.
 - **Output:** `expenditure_ledger.csv`
 
-## IV. Phase 2: Predictive Modeling (LOGICAL NEXT)
-- **Model A:** Stochastic Frontier Analysis (SFA) to identify distance from the efficiency frontier.
-- **Model B:** Regression of $PCI$ against $Jurisdictional\_Density$ and $Average\_Daily\_Traffic$.
+## IV. Phase 2: Predictive Modeling (COMPLETE)
+
+### Skill 4: `phase2/data_prep`
+- **Function:** Computes queen-contiguity fragmentation metrics (`n_neighbors`, `boundary_share`, composite `fragmentation_idx`), synthesises PCI and cost-per-lane-mile from published SGV benchmarks.
+- **Output:** `data/output/phase2/panel_data.parquet`
+
+### Skill 5: `phase2/spatial_analysis`
+- **Function:** Spearman correlation matrix, Global Moran's I, Local LISA cluster maps for PCI and cost.
+- **Output:** `correlation_heatmap.png`, `moran_global.json`, `lisa_clusters_*.geojson`, `lisa_map_*.png`
+
+### Skill 6: `phase2/regression`
+- **Function:** OLS models M1–M4 (HC3 robust SE) + Moran test on residuals + Spatial Lag model (2SLS).
+- **Output:** `ols_results.txt`, `regression_coef_plot.png`, `spatial_lag_results.txt`
+
+### Skill 7: `phase2/sfa`
+- **Function:** Stochastic Frontier Analysis (half-normal composed error, MLE via L-BFGS-B + JLMS efficiency scores).
+- **Output:** `sfa_results.txt`, `sfa_efficiency_scores.csv`, `sfa_efficiency_plot.png`
 
 ## V. Data Schema (Phase 1 Target)
 
@@ -67,4 +81,10 @@
   - Note: Census API blocked in sandbox; static ACS QuickFacts fallback used — swap for live API in production.
 - [ ] Run `pci_aggregator` (requires network access to SaveCaliforniaStreets.org).
 - [ ] Run `procurement_scrubber` (requires network access to SCO open-data API).
-- [ ] Begin Phase 2: Stochastic Frontier Analysis and PCI regression models.
+- [x] Execute Phase 2 analysis suite (`phase2/run_phase2.py`).
+  - M2: fragmentation_idx → PCI: **–2.99 pts/SD**, p=0.0007 (income-controlled OLS)
+  - M4: fragmentation_idx → log(cost/LM): **+0.157**, p<0.0001 (~17% cost premium/SD)
+  - Spatial lag 2SLS: frag coef **–3.02**, p=0.009 (robust to spatial spillover)
+  - SFA mean TE: **0.907** (avg 9.3% avoidable cost); contract cities cluster in inefficient tail
+  - LISA: Azusa+Irwindale form HH cost cluster; El Monte forms LL PCI cluster
+  - 15 output files in `data/output/phase2/`; narrative in `phase2_summary.md`

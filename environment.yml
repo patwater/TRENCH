@@ -15,5 +15,10 @@ dependencies:
   - scipy>=1.11
   - numpy>=1.26
   - pip
+  - matplotlib>=3.8
+  - seaborn>=0.13
+  - scikit-learn>=1.4
   - pip:
       - statsmodels>=0.14
+      - esda>=2.9
+      - libpysal>=4.14

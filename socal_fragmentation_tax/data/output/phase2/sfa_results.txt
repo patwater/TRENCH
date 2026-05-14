@@ -1,0 +1,58 @@
+========================================================================
+        Stochastic Frontier Analysis — Cost Frontier (Half-Normal)      
+========================================================================
+  N observations   : 24
+  Dep. variable    : log(cost_per_lane_mile)
+  Log-likelihood   : 30.8905
+  σ_v  (noise)     : 0.0000
+  σ_u  (ineffic.)  : 0.1334
+  λ = σ_u/σ_v      : 1333982243.5635  (signal >> noise → frontier meaningful)
+  σ = √(σ²_v+σ²_u): 0.1334
+------------------------------------------------------------------------
+  Parameter                        Estimate
+------------------------------------------------------------------------
+  const                            11.21190
+  fragmentation_idx                 0.13925
+  median_hh_income_z               -0.27075
+  is_contract                       0.21438
+  area_sq_mi_z                      0.00931
+------------------------------------------------------------------------
+
+  City Efficiency Rankings (TE = 1 → on frontier):
+------------------------------------------------------------------------
+  Rank   City                   TE Score   Ineffic %   Frag Idx City Class    
+------------------------------------------------------------------------
+  1      Arcadia                  1.0000        0.0%     -0.109  Full-Service  
+  1      Monterey Park            1.0000        0.0%     -0.377  Full-Service  
+  3      Industry                 0.9999        0.0%      1.408  Contract      
+  4      Pomona                   0.9983        0.2%     -1.598  Full-Service  
+  5      Baldwin Park             0.9816        1.8%     -0.109  Full-Service  
+  6      Rosemead                 0.9802        2.0%     -0.108  Full-Service  
+  7      Alhambra                 0.9701        3.0%     -1.598  Full-Service  
+  8      Azusa                    0.9648        3.5%     -0.109  Full-Service  
+  9      Temple City              0.9626        3.7%     -0.108  Full-Service  
+  10     Monrovia                 0.9624        3.8%      1.408  Full-Service  
+  11     San Gabriel              0.9189        8.1%     -0.108  Full-Service  
+  12     San Dimas                0.9082        9.2%     -0.108  Full-Service  
+  13     Montebello               0.9047        9.5%      1.408  Full-Service  
+  14     Glendora                 0.8963       10.4%     -0.377  Full-Service  
+  15     Diamond Bar              0.8742       12.6%     -0.109  Full-Service  
+  16     Duarte                   0.8740       12.6%     -0.109  Full-Service  
+  17     South El Monte           0.8699       13.0%     -0.108  Contract      
+  18     El Monte                 0.8546       14.5%     -1.598  Full-Service  
+  19     La Puente                0.8540       14.6%      1.408  Contract      
+  20     La Verne                 0.8397       16.0%      1.408  Full-Service  
+  21     West Covina              0.8319       16.8%     -0.108  Full-Service  
+  22     Covina                   0.8260       17.4%     -0.109  Full-Service  
+  23     Irwindale                0.7661       23.4%      1.408  Contract      
+  24     Whittier                 0.7211       27.9%     -1.598  Full-Service  
+------------------------------------------------------------------------
+  Mean TE: 0.9066   (avg inefficiency: 9.3%)
+  Most efficient  : Arcadia (TE=1.0000)
+  Least efficient : Whittier (TE=0.7211)
+
+  Interpretation:
+    fragmentation_idx > 0 → more borders → higher cost per lane-mile
+    is_contract coef  > 0 → contract cities pay premium for outsourced services
+    TE < 1 means a city could achieve current road maintenance at lower cost
+      if it operated at the efficiency of the frontier city.
