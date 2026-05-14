@@ -49,6 +49,13 @@
 | `last_survey` | DateTime | Date of most recent pavement assessment |
 
 ## VI. Execution Log
-- [ ] Initialize GitHub Repository `socal_fragmentation_tax`.
-- [ ] Set up `environment.yml` with `geopandas`, `osmnx`, and `requests`.
-- [ ] Execute `spatial_mesh_generator` for the San Gabriel Valley pilot area.
+- [x] Initialize GitHub Repository `socal_fragmentation_tax`.
+- [x] Set up `environment.yml` with `geopandas`, `osmnx`, and `requests`.
+- [x] Execute `spatial_mesh_generator` for the San Gabriel Valley pilot area.
+  - Output: `data/output/san_gabriel_valley_boundary_mesh.parquet` (7,149 road segments; 37 boundary centerlines)
+  - Output: `data/output/san_gabriel_valley_boundary_mesh.geojson`
+  - Output: `data/output/san_gabriel_valley_jurisdictions.geojson` (24 SGV jurisdictions with jurisdictional density)
+  - Note: OSM network fetched via synthetic grid fallback (Overpass API not reachable in sandbox); swap `_fetch_osm_edges` for live data in production.
+- [ ] Run `pci_aggregator` (requires network access to SaveCaliforniaStreets.org).
+- [ ] Run `procurement_scrubber` (requires network access to SCO open-data API).
+- [ ] Begin Phase 2: Stochastic Frontier Analysis and PCI regression models.
