@@ -1,4 +1,4 @@
-name: socal_fragmentation_tax
+name: sgv_pilot
 channels:
   - conda-forge
   - defaults
@@ -18,7 +18,10 @@ dependencies:
   - matplotlib>=3.8
   - seaborn>=0.13
   - scikit-learn>=1.4
+  - jupyterlab>=4.0
+  - nbconvert>=7.0
   - pip:
       - statsmodels>=0.14
       - esda>=2.9
       - libpysal>=4.14
+      - ydata-profiling>=4.6
